@@ -1,0 +1,18 @@
+{
+  "name": "alc-node",
+  "version": "1.0.0",
+  "description": "backend for alc challenge written in nodeJs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ajibigad@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "~1.0.1",
+    "dotenv": "^4.0.0",
+    "express": "~4.0.0",
+    "mongoose": "^4.12.1",
+    "mongoose-paginate": "^5.0.3"
+  }
+}

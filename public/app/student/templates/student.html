@@ -1,0 +1,76 @@
+<div class="row" style="padding-top: 10px">
+    <form class="col s8 offset-s2">
+        <div class="row">
+            <div class="col s8 offset-s2" ng-form="studentdetails" id="studentdetails">
+                <div class="input-field">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="firstname" name="firstname" type="text" class="validate"
+                    	ng-model="student.firstname" ng-required="true">
+                    <label for="firstname">First Name</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="lastname" name="lastname" type="text" class="validate"
+                    	ng-model="student.lastname" ng-required="true">
+                    <label for="lastname">Last Name</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="othername" name="othername" type="text" class="validate" 
+                    	ng-model="student.othername" ng-required="true">
+                    <label for="othername">Other name</label>
+                </div>          
+                <div class="input-field">
+                    <select ng-model="student.sex" ng-required="true" name="sex" id="sex">
+                        <option value="">Choose your Sex</option>
+                        <option value="male">MALE</option>
+                        <option value="female">FEMALE</option>
+                    </select>
+                    <label>Sex</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">phone</i>
+                    <input id="phonenumber" type="tel" class="validate" name="phonenumber" 
+                    	ng-model="student.phoneNumber" ng-required="true" ng-pattern="/[0-9]{11}/">
+                    <label for="phonenumber">Phone number <i>Must be 11 digits</i></label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">email</i>
+                    <input id="email" name="email" type="email" class="validate" 
+                    	ng-model="student.email" ng-required="true">
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="address" name="address" type="text" class="validate" 
+                    	ng-model="student.address" ng-required="true">
+                    <label for="address">Address</label>
+                </div>
+                <div class="input-field">
+                    <input id="birthdate" name="birthdate" type="date" class="datepicker" 
+                    ng-model="student.birthDate" ng-required="true">
+                    <label for="birthdate">Date of birth <i>(yyyy-mm-dd)</i></label>
+                </div>
+                <div class="col s12 push-s8">
+                	<a class="waves-effect waves-light btn" ng-click="submitStudent()">Submit
+                		<i class="material-icons right">send</i>
+                	</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+$('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 100, // Creates a dropdown of 15 years to control year,
+    today: 'Today',
+    clear: 'Clear',
+    close: 'Ok',
+    closeOnSelect: false, // Close upon selecting a date,
+    format: 'yyyy-mm-dd',
+  	formatSubmit: 'yyyy-mm-dd',
+  	max: new Date()
+});
+$('select').material_select();
+</script>

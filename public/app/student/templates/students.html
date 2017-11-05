@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col s12">
+        <table class="centered responsive-table bordered" st-table="students" st-pipe="getStudents">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>	
+                    <th>Sex</th>
+                    <th>Phone Number</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-show="dataLoading">
+                    <td colspan="6">
+                    	<pre>{{dataLoading}}</pre>
+                        <div class="preloader-wrapper big active">
+                            <div class="spinner-layer spinner-blue-only">
+                                <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="gap-patch">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr ng-show="students.length == 0">
+                    <td colspan="6">
+                        <h2 class="text-center">No Results</h2>
+                    </td>
+                </tr>
+                <tr ng-repeat="student in students">
+                    <td>{{student.firstname + ' ' + student.lastname}}</td>
+                    <td>{{student.email}}</td>
+                    <td>{{student.sex | uppercase}}</td>
+                    <td>{{student.phoneNumber}}</td>
+                    <td>{{student.address}}</td>
+                    <td>
+                        <a class="btn btn-floating teal lighten-1 pulse" ui-sref="student({id : student._id})"><i class="material-icons">edit</i></a>
+                        <a class="btn btn-floating red lighten-1 pulse tooltipped" data-position="bottom" data-delay="50" data-tooltip="Delete">
+                        	<i class="material-icons" ng-click="deleteStudent(student._id)">delete</i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td st-pagination="" st-items-by-page="10" colspan="10">
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red pulse" ui-sref="student">
+      <i class="large material-icons">add</i>
+    </a>
+    </div>
+</div>
