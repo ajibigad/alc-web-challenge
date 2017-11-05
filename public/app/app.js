@@ -34,7 +34,6 @@ config(['$stateProvider', '$urlRouterProvider', '$breadcrumbProvider', function(
     $urlRouterProvider.otherwise('/students');
 
     $breadcrumbProvider.setOptions({
-      // template: '<div>My app<span ng-repeat="step in steps"> > {{step.ncyBreadcrumbLabel}}</span></div>',
-      template: '<div class="nav-wrapper"><div class="col s12"><a href="{{step.ncyBreadcrumbLink}}" class="breadcrumb" ng-repeat="step in steps">{{step.ncyBreadcrumbLabel}}</a></div></div>'
+      template: '<div class="nav-wrapper"><div class="col s12"><a href="/#{{step.ncyBreadcrumbLink}}" class="breadcrumb" ng-repeat="step in steps">{{step.ncyBreadcrumbLabel}}</a></div></div>'
     });
 }]);
