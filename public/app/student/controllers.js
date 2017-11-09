@@ -89,7 +89,7 @@ angular.module('alc.student.controllers', [])
 
         $scope.deleteStudent = function(id) {
             StudentService.deleteStudent(id, function() {
-                $scope.getStudents();
+                $scope.getStudents($scope.tableState);
             });
         };
 
