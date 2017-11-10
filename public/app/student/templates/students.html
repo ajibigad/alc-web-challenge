@@ -4,7 +4,7 @@
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Email</th>	
+                    <th>Email</th>
                     <th>Sex</th>
                     <th>Phone Number</th>
                     <th>Address</th>
@@ -42,7 +42,7 @@
                     <td>
                         <a class="btn btn-floating teal lighten-1 pulse" ui-sref="student({id : student._id})"><i class="material-icons">edit</i></a>
                         <a class="btn btn-floating red lighten-1 pulse tooltipped" data-position="bottom" data-delay="50" data-tooltip="Delete">
-                        	<i class="material-icons" ng-click="deleteStudent(student._id)">delete</i>
+                            <i class="material-icons" ng-click="deleteStudent(student._id)">delete</i>
                         </a>
                     </td>
                 </tr>
@@ -56,8 +56,18 @@
         </table>
     </div>
     <div class="fixed-action-btn">
-        <a class="btn-floating btn-large red pulse" ui-sref="student">
-      <i class="large material-icons">add</i>
-    </a>
+        <a class="btn-floating btn-large black pulse" ui-sref="student" id="addStudent">
+            <i class="large material-icons">add</i>
+        </a>
+        <!-- Tap Target Structure -->
+        <div class="tap-target" data-activates="addStudent">
+            <div class="tap-target-content">
+                <h5>Hey! Am here</h5>
+                <p>Add students to the record</p>
+            </div>
+        </div>
     </div>
 </div>
+<script type="text/javascript">
+    $('.tap-target').tapTarget('open');
+</script>
